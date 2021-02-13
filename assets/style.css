@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins';
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+  background-color: #368980;
+}
+
+h1 {
+  max-width: 40rem;
+  text-align: center;
+  margin: 0 auto 3rem auto;;
+  padding: 1rem 8rem;
+  background-color: #00D1D1;
+  color: white;
+  box-shadow: 15px 15px rgba(0,0,0,.15);
+  transition: all .4s ease;;
+}
+
+h1:hover {
+  border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
+  box-shadow: 10px 10px rgba(0,0,0,.25);
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 45rem;
+  background-color: aqua;
+  padding: 1rem 2rem;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
+  color: black;
+  box-shadow: 15px 15px rgba(0,0,0,.15);
+  transition: all .4s ease;;
+}
+
+.card:hover {
+  box-shadow: 10px 10px rgba(0,0,0,.25);
+}
+
+.add_task {
+  width: 42rem;
+  padding: 1rem;
+}
+
+#form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.active_task {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  margin: 1rem 0;
+}
+
+.task {
+  width: 80%;
+  font-size: 20px;
+}
+
+.task_list {
+  padding: 1rem;
+}
+
+.default {
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+}
+
+.removed {
+  display: none;
+}
+
+#addBtn {
+  padding: 0.7rem;
+  width:  20%;
+  background-color: #00B2B3;
+  color: white;
+  font-weight: 700;
+  border-radius: 10px;
+  font-size: 0.8rem;
+}
+
+#input_task {
+  width: 78%;
+  padding: 0.7rem
+}
+
+.checkbox {
+  z-index: 2;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin: 5px 10px 0 0;
+  float: left;
+}
+
+.actions {
+  display: flex;
+}
+
+.edit {
+  padding-right: 10px;
+}
+
+.edit,
+.delete {
+  font-size:  1.25em;
+  padding: 5px;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.checkbox,
+.edit,
+.delete,
+#addBtn {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+  main {
+    padding: 0;
+    padding-top: 5rem;
+  }
+
+  .container {
+    width: 87%;
+  }
+
+  .add_task {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+
+  h1 {
+    width: 87%;
+    padding: 1rem 2rem;
+  }
+
+  #form {
+    flex-direction: column;
+  }
+
+  #input_task {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .add_task,
+  .task_list {
+    padding: 1rem 0.5rem;
+  }
+
+  #addBtn {
+    width: 100%;
+    margin: 10px auto 0 auto;
+  }
+
+  .active_task {
+    display: block;
+  }
+
+  .actions {
+    justify-content: space-evenly;
+    margin-top: 10px;
+  }
+
+  .task {
+    font-size: 1rem;
+  }
+
+  .checkbox {
+    margin-top: 2px;
+  }
+
+}
+
