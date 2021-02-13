@@ -52,8 +52,10 @@ addBtn.addEventListener('click', function () {
     for( checkBtn of checkbox) {
       taskFinished(checkBtn);
     }
-
+    const history = taskList.innerHTML
+    saveTask(history)
     userInput.value = ''
+    renderHistory()
 
 });
 
