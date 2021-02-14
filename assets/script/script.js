@@ -61,6 +61,7 @@ addBtn.addEventListener('click', function () {
     taskFinished(checkBtn);
   }
   userInput.value = '';
+
 });
 
 // Execute a function when the user releases a key on the keyboard
