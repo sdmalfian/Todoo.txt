@@ -89,11 +89,24 @@ h1:hover {
 #addBtn {
   padding: 0.7rem;
   width:  20%;
-  background-color: #00B2B3;
-  color: white;
   font-weight: 700;
   border-radius: 10px;
   font-size: 0.8rem;
+  color: #494949 !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ffffff;
+  border: 2px solid #494949 !important;
+  display: inline-block;
+  transition: all 0.4s ease 0s;
+}
+
+#addBtn:hover {
+  color: #ffffff !important;
+  background: #00A3A3;
+  border-color: #ffffff !important;
+  transition: all 0.4s ease 0s;
+  border-width: 4px;
 }
 
 #input_task {
@@ -198,6 +211,11 @@ h1:hover {
   #addBtn {
     width: 100%;
     margin: 10px auto 0 auto;
+    color: #ffffff !important;
+    background: #00A3A3;
+    border-color: #00A3A3 !important;
+    transition: all 0.4s ease 0s;
+    border-width: 2px;
   }
 
   .active_task {

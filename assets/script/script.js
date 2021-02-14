@@ -3,10 +3,9 @@ let userInput = document.querySelector('#input_task');
 let taskList = document.querySelector('.list');
 let defaultTask = document.querySelector('.default');
 let key = 1;
-let testLocal = document.querySelector('.test_local')
+let testLocal = document.querySelector('.test_local');
 
-checkForStorage()
-
+document.addEventListener('DOMContentLoaded', getTodos);
 addBtn.addEventListener('click', function () {
   let userTask = userInput.value;
   let tasks = document.querySelectorAll('.task');
@@ -19,6 +18,8 @@ addBtn.addEventListener('click', function () {
       return;
     }
   }
+  // save to local
+  saveLocalTodos(userTask);
 
   // check if user input nothing
 
@@ -27,7 +28,7 @@ addBtn.addEventListener('click', function () {
     return;
   }
 
-  if(!defaultTask.classList.contains('removed')) {
+  if (!defaultTask.classList.contains('removed')) {
     defaultTask.classList.toggle('removed');
   }
 
@@ -42,26 +43,25 @@ addBtn.addEventListener('click', function () {
     </div>
     `;
 
-  //
+  // delete function
   let deleteBtn = document.querySelectorAll('.delete');
   for (button of deleteBtn) {
     deleteTask(button);
   }
 
-  //
+  // edit function
   let editBtnKey = document.querySelectorAll('.edit');
   for (editBtn of editBtnKey) {
     editTask(editBtn);
-    console.log('test');
   }
 
-  //
+  // check function
   let checkbox = document.querySelectorAll('.checkbox');
   for (checkBtn of checkbox) {
     taskFinished(checkBtn);
   }
-  userInput.value = '';
 
+  userInput.value = '';
 });
 
 // Execute a function when the user releases a key on the keyboard
@@ -78,7 +78,9 @@ const deleteTask = (button) => {
   _button = button;
   _button.addEventListener('click', function () {
     if (confirm('Delete this task?')) {
-      button.parentElement.parentElement.remove();
+      let todo = button.parentElement.parentElement;
+      todo.remove();
+      removeLocalTodos(todo);
     } else {
       return;
     }
@@ -90,11 +92,12 @@ const editTask = (edit) => {
   _edit.addEventListener('click', function () {
     let edit_input = prompt('Change task to: ');
     let grand = button.parentElement.parentElement;
-    let valueTarget = grand.firstElementChild.nextElementSibling;
+    let valueTarget = grand.children[1];
+    let oldValue = valueTarget.innerText
 
     if (edit_input) {
       valueTarget.innerText = edit_input;
-      return valueTarget;
+      editLocalTodos(oldValue, valueTarget);
     } else {
       return;
     }
@@ -111,8 +114,3 @@ const taskFinished = (button) => {
     task.classList.toggle('done');
   });
 };
-
-function checkForStorage() {
-  console.log(typeof(Storage));
-  return typeof(Storage) !== "undefined";
-}
