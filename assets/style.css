@@ -139,6 +139,7 @@ h1:hover {
 
 .done {
   text-decoration: line-through;
+  opacity: 0.5;
 }
 
 .checkbox,
@@ -194,6 +195,10 @@ h1:hover {
     box-shadow: 10px 10px rgba(0,0,0,.15);
   }
 
+  .card:hover {
+    box-shadow: 5px 5px rgba(0,0,0,.25);
+  }
+
   #form {
     flex-direction: column;
   }
@@ -233,6 +238,5 @@ h1:hover {
   .fa-edit {
     display: none !important;
   }
-
 }
 
