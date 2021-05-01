@@ -149,10 +149,17 @@ h1:hover {
   cursor: pointer;
 }
 
-.fall {
-  transform: translateY(8rem) rotateZ(20deg);
-  opacity: 0;
+.link {
+  text-align: center;
+  margin-top: 75px;
+  color: #fff;
+  text-shadow: 4px 4px 3px rgba(0, 0, 0, 1);
 }
+
+.link a {
+  color: #ffffff;
+}
+
 
 @media only screen and (max-width: 800px) {
   main {
