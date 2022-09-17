@@ -88,16 +88,13 @@ const deleteTask = (button) => {
 };
 
 const editTask = (edit) => {
-  _edit = edit;
-  _edit.addEventListener('click', function () {
+  edit.addEventListener('click', function () {
     let edit_input = prompt('Change task to: ');
-    let grand = button.parentElement.parentElement;
-    let valueTarget = grand.children[1];
-    let oldValue = valueTarget.innerText
-
     if (edit_input) {
-      valueTarget.innerText = edit_input;
-      editLocalTodos(oldValue, valueTarget);
+      console.log(edit_input)
+      newTask = edit_input;
+      let todo = edit.parentElement.parentElement;
+      editLocalTodos(todo, newTask);
     } else {
       return;
     }
