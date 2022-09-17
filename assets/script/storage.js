@@ -76,7 +76,7 @@ const removeLocalTodos = (todo) => {
   localStorage.setItem('todos', JSON.stringify(todos));
 }
 
-const editLocalTodos = (oldValue, newValue) => {
+const editLocalTodos = (oldTask, newTask) => {
   // check todo on local storage 
   let todos
   if ( localStorage.getItem('todos') === null ) {
@@ -84,12 +84,9 @@ const editLocalTodos = (oldValue, newValue) => {
   } else {
     todos = JSON.parse(localStorage.getItem('todos'));
   }
-
-  const todoIndex = todos.indexOf(oldValue);
-  // delete old value
-  todos.splice(todos.indexOf(todoIndex), 1);
-  // push new value
-  todos.push(newValue.innerText);
+  const todoIndex = oldTask.children[1].innerText;
+  todos.splice(todos.indexOf(todoIndex), 1, newTask);
   localStorage.setItem('todos', JSON.stringify(todos));
+  location.reload();
 }
 
